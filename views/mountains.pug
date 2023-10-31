@@ -9,8 +9,13 @@ block content
       { name: "Mount Fuji", location: "Tokyo", altitude:12388}]
   div(class="container-fluid")
     div(class="row")
-        for item in results
+        for (item, index) in results
           div(class="col-sm-2")
             p Name: #{item.name}
             p Location: #{item.location}
             p Altitude: #{item.altitude}  
+            div(onclick='buy(${index})')
+  script. 
+  function buy(index) {
+    alert('You purchased item $y{index}');
+  }       
